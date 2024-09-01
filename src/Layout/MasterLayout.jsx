@@ -222,189 +222,80 @@ const MasterLayout = () => {
     },
   ];
 
-  // return (
-  //   <div className="main flex gap-1 ">
-  //     {/*DashBoard Sidemenu Section*/}
-  //     <div className="left w-[18%] h-screen border border-gray-200 border-l-2 shadow-xl py-3 overflow-hidden ">
-  //       <div className="logo text-center">
-  //         <h2 className="text-[40px] font-bold text-green-600">Stockly</h2>
-  //         <h5 className="text-gray-400 text-sm">Inventory Management System</h5>
-  //       </div>
-  //       <div className="menu flex flex-row mt-5 overflow-y-scroll h-[795px]">
-  //         {sideItems.map((item, index) => {
-  //           return item.subMenus.length > 0 ? (
-  //             <div
-  //               key={index}
-  //               className="collapse collapse-arrow bg-gray-100 rounded-md mb-3"
-  //             >
-  //               <input type="radio" name="my-accordion-2" />
-  //               <div className="collapse-title text-lg font-medium flex items-center gap-2">
-  //                 {item.icon} {item.title}
-  //               </div>
-  //               <div className="collapse-content z-[9999] ml-3 mt-[-10px] flex flex-col">
-  //                 {item.subMenus.map((item, index) => {
-  //                   return (
-  //                     <NavLink
-  //                       key={index}
-  //                       to={item.url}
-  //                       className={({ isActive }) =>
-  //                         isActive
-  //                           ? "py-2 text-green-600 font-medium flex items-center gap-2"
-  //                           : "py-2 text-gray-500 font-medium flex items-center gap-2"
-  //                       }
-  //                     >
-  //                       {item.icon} {item.title}
-  //                     </NavLink>
-  //                   );
-  //                 })}
-  //               </div>
-  //             </div>
-  //           ) : (
-  //             <NavLink
-  //               to={item.url}
-  //               className={({ isActive }) =>
-  //                 isActive
-  //                   ? "pl-3 bg-gray-100 mb-3 py-2 text-green-600 text-lg font-medium flex w-full items-center gap-3"
-  //                   : "pl-3 bg-gray-100 mb-3 py- text-gray-500 w-full text-lg font-medium flex items-center gap-3"
-  //               }
-  //             >
-  //               {item.icon} {item.title}
-  //             </NavLink>
-  //           );
-  //         })}
-  //       </div>
-  //     </div>
-  //     {/*DashBoard Right Section*/}
-  //     <div className="right w-[82%] h-screen overflow-hidden">
-  //       <div className="top py-5 shadow-md flex items-center justify-between">
-  //         <h3 className="pl-5 text-lg font-semibold">Dashboard</h3>
-
-  //         <div className="dropdown dropdown-end">
-  //           <div tabIndex={0} role="button" className="profile tooltip tooltip-left w-[50px] h-[50px] rounded-full overflow-hidden mr-5 cursor-pointer" title="Profile">
-  //               <img className="w-full" src="https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small/beautiful-latin-woman-avatar-character-icon-free-vector.jpg"
-  //               alt=""/>
-  //           </div>
-  //           {
-  //               userData.map((item, index) => {
-  //                   return(
-
-  //                       <ul tabIndex={0} className="menu dropdown-content bg-base-100 z-[1] mt-4 w-52 p-2 shadow" >
-  //                           <li className="text-green-500 ml-3">{item.email}</li>
-  //                           <li className="hover:bg-green-500 rounded hover:text-white"><Link>Profile</Link></li>
-  //                           <li className="hover:bg-green-500 rounded hover:text-white"><button onClick={handleLogout}>Logout</button></li>
-  //                       </ul>
-  //                   )
-  //               })
-  //           }
-  //         </div>
-  //       </div>
-  //       <div className="bottom p-5 pt-0 overflow-y-scroll h-screen">
-  //         <Outlet />
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
-
   return (
-    <div className="main flex">
-      {/* Sidebar */}
-      <div
-        className={`left fixed md:relative z-20 md:z-0 ${
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } md:translate-x-0 transition-transform duration-300 w-[70%] md:w-[18%] h-screen border border-gray-200 border-l-2 shadow-xl py-3 overflow-hidden bg-white`}
-      >
+    <div className="main flex gap-1 ">
+      {/*DashBoard Sidemenu Section*/}
+      <div className="left w-[18%] h-screen border border-gray-200 border-l-2 shadow-xl py-3 overflow-hidden ">
         <div className="logo text-center">
-          <h2 className="text-[30px] md:text-[40px] font-bold text-green-600">
-            Stockly
-          </h2>
+          <h2 className="text-[40px] font-bold text-green-600">Stockly</h2>
           <h5 className="text-gray-400 text-sm">Inventory Management System</h5>
         </div>
-        <div className="menu  mt-5 overflow-y-scroll h-[795px]">
-          {sideItems.map((item, index) => (
-            <div key={index}>
-              {item.subMenus.length > 0 ? (
-                <div className="collapse collapse-arrow bg-gray-100 rounded-md mb-3">
-                  <input type="checkbox" className="peer" />
-                  <div className="collapse-title text-lg font-medium flex items-center gap-2">
-                    {item.icon} {item.title}
-                  </div>
-                  <div className="collapse-content z-[9999] ml-3 mt-[-10px] flex flex-col">
-                    {item.subMenus.map((subItem, subIndex) => (
+        <div className="menu flex flex-row mt-5 overflow-y-scroll h-[795px]">
+          {sideItems.map((item, index) => {
+            return item.subMenus.length > 0 ? (
+              <div
+                key={index}
+                className="collapse collapse-arrow bg-gray-100 rounded-md mb-3"
+              >
+                <input type="radio" name="my-accordion-2" />
+                <div className="collapse-title text-lg font-medium flex items-center gap-2">
+                  {item.icon} {item.title}
+                </div>
+                <div className="collapse-content z-[9999] ml-3 mt-[-10px] flex flex-col">
+                  {item.subMenus.map((item, index) => {
+                    return (
                       <NavLink
-                        key={subIndex}
-                        to={subItem.url}
+                        key={index}
+                        to={item.url}
                         className={({ isActive }) =>
                           isActive
                             ? "py-2 text-green-600 font-medium flex items-center gap-2"
                             : "py-2 text-gray-500 font-medium flex items-center gap-2"
                         }
                       >
-                        {subItem.icon} {subItem.title}
+                        {item.icon} {item.title}
                       </NavLink>
-                    ))}
-                  </div>
+                    );
+                  })}
                 </div>
-              ) : (
-                <NavLink
-                  to={item.url}
-                  className={({ isActive }) =>
-                    isActive
-                      ? "pl-3 bg-gray-100 mb-3 py-2 text-green-600 text-lg font-medium flex w-full items-center gap-3"
-                      : "pl-3 bg-gray-100 mb-3 py- text-gray-500 w-full text-lg font-medium flex items-center gap-3"
-                  }
-                >
-                  {item.icon} {item.title}
-                </NavLink>
-              )}
-            </div>
-          ))}
+              </div>
+            ) : (
+              <NavLink
+                to={item.url}
+                className={({ isActive }) =>
+                  isActive
+                    ? "pl-3 bg-gray-100 mb-3 py-2 text-green-600 text-lg font-medium flex w-full items-center gap-3"
+                    : "pl-3 bg-gray-100 mb-3 py- text-gray-500 w-full text-lg font-medium flex items-center gap-3"
+                }
+              >
+                {item.icon} {item.title}
+              </NavLink>
+            );
+          })}
         </div>
       </div>
-
-      {/* Content Area */}
-      <div className="right flex-1 h-screen overflow-hidden">
-        {/* Hamburger Icon for Mobile */}
-        <div className="md:hidden flex justify-between items-center p-4 bg-gray-100 shadow-md">
-          <h3 className="text-lg font-semibold">Dashboard</h3>
-          <button
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="text-2xl"
-          >
-            <FaBars />
-          </button>
-        </div>
-
-        {/* Top Bar */}
+      {/*DashBoard Right Section*/}
+      <div className="right w-[82%] h-screen overflow-hidden">
         <div className="top py-5 shadow-md flex items-center justify-between">
-          <h3 className="pl-5 text-lg font-semibold hidden md:block">
-            Dashboard
-          </h3>
+          <h3 className="pl-5 text-lg font-semibold">Dashboard</h3>
 
           <div className="dropdown dropdown-end">
-            <div
-              tabIndex={0}
-              role="button"
-              className="profile tooltip tooltip-left w-[40px] md:w-[50px] h-[40px] md:h-[50px] rounded-full overflow-hidden mr-5 cursor-pointer"
-              title="Profile"
-            >
-              <img
-                className="w-full"
-                src="https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small/beautiful-latin-woman-avatar-character-icon-free-vector.jpg"
-                alt="Profile"
-              />
+            <div tabIndex={0} role="button" className="profile tooltip tooltip-left w-[50px] h-[50px] rounded-full overflow-hidden mr-5 cursor-pointer" title="Profile">
+                <img className="w-full" src="https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small/beautiful-latin-woman-avatar-character-icon-free-vector.jpg"
+                alt=""/>
             </div>
-            <ul
-              tabIndex={0}
-              className="menu dropdown-content bg-base-100 z-[1] mt-4 w-52 p-2 shadow"
-            >
-              <li className="text-green-500 ml-3">{userData.email}</li>
-              <li className="hover:bg-green-500 rounded hover:text-white">
-                <Link to="/profile">Profile</Link>
-              </li>
-              <li className="hover:bg-green-500 rounded hover:text-white">
-                <button onClick={handleLogout}>Logout</button>
-              </li>
-            </ul>
+            {
+                userData.map((item, index) => {
+                    return(
+
+                        <ul tabIndex={0} className="menu dropdown-content bg-base-100 z-[1] mt-4 w-52 p-2 shadow" >
+                            <li className="text-green-500 ml-3">{item.email}</li>
+                            <li className="hover:bg-green-500 rounded hover:text-white"><Link>Profile</Link></li>
+                            <li className="hover:bg-green-500 rounded hover:text-white"><button onClick={handleLogout}>Logout</button></li>
+                        </ul>
+                    )
+                })
+            }
           </div>
         </div>
         <div className="bottom p-5 pt-0 overflow-y-scroll h-screen">
@@ -413,6 +304,115 @@ const MasterLayout = () => {
       </div>
     </div>
   );
+
+  // return (
+  //   <div className="main flex">
+  //     {/* Sidebar */}
+  //     <div
+  //       className={`left fixed md:relative z-20 md:z-0 ${
+  //         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+  //       } md:translate-x-0 transition-transform duration-300 w-[70%] md:w-[18%] h-screen border border-gray-200 border-l-2 shadow-xl py-3 overflow-hidden bg-white`}
+  //     >
+  //       <div className="logo text-center">
+  //         <h2 className="text-[30px] md:text-[40px] font-bold text-green-600">
+  //           Stockly
+  //         </h2>
+  //         <h5 className="text-gray-400 text-sm">Inventory Management System</h5>
+  //       </div>
+  //       <div className="menu  mt-5 overflow-y-scroll h-[795px]">
+  //         {sideItems.map((item, index) => (
+  //           <div key={index}>
+  //             {item.subMenus.length > 0 ? (
+  //               <div className="collapse collapse-arrow bg-gray-100 rounded-md mb-3">
+  //                 <input type="checkbox" className="peer" />
+  //                 <div className="collapse-title text-lg font-medium flex items-center gap-2">
+  //                   {item.icon} {item.title}
+  //                 </div>
+  //                 <div className="collapse-content z-[9999] ml-3 mt-[-10px] flex flex-col">
+  //                   {item.subMenus.map((subItem, subIndex) => (
+  //                     <NavLink
+  //                       key={subIndex}
+  //                       to={subItem.url}
+  //                       className={({ isActive }) =>
+  //                         isActive
+  //                           ? "py-2 text-green-600 font-medium flex items-center gap-2"
+  //                           : "py-2 text-gray-500 font-medium flex items-center gap-2"
+  //                       }
+  //                     >
+  //                       {subItem.icon} {subItem.title}
+  //                     </NavLink>
+  //                   ))}
+  //                 </div>
+  //               </div>
+  //             ) : (
+  //               <NavLink
+  //                 to={item.url}
+  //                 className={({ isActive }) =>
+  //                   isActive
+  //                     ? "pl-3 bg-gray-100 mb-3 py-2 text-green-600 text-lg font-medium flex w-full items-center gap-3"
+  //                     : "pl-3 bg-gray-100 mb-3 py- text-gray-500 w-full text-lg font-medium flex items-center gap-3"
+  //                 }
+  //               >
+  //                 {item.icon} {item.title}
+  //               </NavLink>
+  //             )}
+  //           </div>
+  //         ))}
+  //       </div>
+  //     </div>
+
+  //     {/* Content Area */}
+  //     <div className="right flex-1 h-screen overflow-hidden">
+  //       {/* Hamburger Icon for Mobile */}
+  //       <div className="md:hidden flex justify-between items-center p-4 bg-gray-100 shadow-md">
+  //         <h3 className="text-lg font-semibold">Dashboard</h3>
+  //         <button
+  //           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+  //           className="text-2xl"
+  //         >
+  //           <FaBars />
+  //         </button>
+  //       </div>
+
+  //       {/* Top Bar */}
+  //       <div className="top py-5 shadow-md flex items-center justify-between">
+  //         <h3 className="pl-5 text-lg font-semibold hidden md:block">
+  //           Dashboard
+  //         </h3>
+
+  //         <div className="dropdown dropdown-end">
+  //           <div
+  //             tabIndex={0}
+  //             role="button"
+  //             className="profile tooltip tooltip-left w-[40px] md:w-[50px] h-[40px] md:h-[50px] rounded-full overflow-hidden mr-5 cursor-pointer"
+  //             title="Profile"
+  //           >
+  //             <img
+  //               className="w-full"
+  //               src="https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small/beautiful-latin-woman-avatar-character-icon-free-vector.jpg"
+  //               alt="Profile"
+  //             />
+  //           </div>
+  //           <ul
+  //             tabIndex={0}
+  //             className="menu dropdown-content bg-base-100 z-[1] mt-4 w-52 p-2 shadow"
+  //           >
+  //             <li className="text-green-500 ml-3">{userData.email}</li>
+  //             <li className="hover:bg-green-500 rounded hover:text-white">
+  //               <Link to="/profile">Profile</Link>
+  //             </li>
+  //             <li className="hover:bg-green-500 rounded hover:text-white">
+  //               <button onClick={handleLogout}>Logout</button>
+  //             </li>
+  //           </ul>
+  //         </div>
+  //       </div>
+  //       <div className="bottom p-5 pt-0 overflow-y-scroll h-screen">
+  //         <Outlet />
+  //       </div>
+  //     </div>
+  //   </div>
+  // );
 };
 
 export default MasterLayout;
