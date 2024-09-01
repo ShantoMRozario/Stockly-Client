@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import {  productFullPageRequest } from "../../Api/ProductApiRequest";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import ImgsViewer from "react-images-viewer";
 
 
 const ProductFull = () => {

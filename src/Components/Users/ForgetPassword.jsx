@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { Oval } from "react-loader-spinner";// This should be your API request function
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
 import { sendEmailOtpRequest } from "../../Api/UserApiRequest";
 import ButtonLoader from "../../Utilities/ButtonLoader";
 

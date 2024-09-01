@@ -1,6 +1,5 @@
 
 import { useState } from "react";
-import { Oval } from "react-loader-spinner";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import VerificationInput from "react-verification-input";

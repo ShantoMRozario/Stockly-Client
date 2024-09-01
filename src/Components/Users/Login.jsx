@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { PiEyeBold } from "react-icons/pi";
 import { PiEyeClosed } from "react-icons/pi";
-import { Oval } from "react-loader-spinner";
 import { loginRequest } from "../../Api/UserApiRequest";
 import { toast } from "react-toastify";
 import ButtonLoader from "../../Utilities/ButtonLoader";

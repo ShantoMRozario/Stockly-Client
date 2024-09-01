@@ -4,7 +4,6 @@ import { PiEyeBold } from "react-icons/pi";
 import { PiEyeClosed } from "react-icons/pi";
 import { Oval } from "react-loader-spinner";
 import { registrationRequest } from "../../Api/UserApiRequest";
-import { toast } from "react-toastify";
 
 
 const Registration = () => {

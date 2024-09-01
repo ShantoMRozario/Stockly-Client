@@ -3,7 +3,6 @@ import { expenseSummaryRequest, purchaseSummaryRequest, returnSummaryRequest, sa
 import { useSelector } from "react-redux";
 import CountUp from 'react-countup';
 import { BsCartXFill, BsFillCartCheckFill, BsFillCartDashFill, BsFillCartPlusFill } from "react-icons/bs";
-import { PureComponent } from 'react';
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 
 
